@@ -27,6 +27,8 @@ module Sprites exposing
 {-| Sprites for game scene and entities.
 -}
 
+import Bytes
+import CompilationInterface.SourceFiles
 import Direction exposing (Direction(..))
 import Env
 import Playground exposing (Shape, Time)
@@ -34,11 +36,13 @@ import Playground.Extra exposing (sprite)
 
 
 tileset =
-    Env.baseUrl ++ "/assets/environment/tileset.png"
+    -- Env.baseUrl ++ "/assets/environment/tileset.png"
+    buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_environment_tileset_png
 
 
 entities =
-    Env.baseUrl ++ "/assets/atlas/entities.png"
+    -- Env.baseUrl ++ "/assets/atlas/entities.png"
+    buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_atlas_entities_png
 
 
 type alias SpriteAnimation =
@@ -57,7 +61,10 @@ sky =
     -- Repeat left and right to make animation easier
     let
         image =
-            Playground.image 384 122 (Env.baseUrl ++ "/assets/environment/sky.png")
+            Playground.image 384
+                122
+                -- (Env.baseUrl ++ "/assets/environment/sky.png")
+                (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_environment_sky_png)
     in
     [ Playground.moveLeft 384 image
     , image
@@ -68,14 +75,20 @@ sky =
 
 
 sea =
-    Playground.image 384 138 (Env.baseUrl ++ "/assets/environment/sea.png")
+    Playground.image 384
+        138
+        -- (Env.baseUrl ++ "/assets/environment/sea.png")
+        (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_environment_sea_png)
         |> Playground.moveDown 180
 
 
 forest =
     let
         image =
-            Playground.image 176 368 (Env.baseUrl ++ "/assets/environment/forest.png")
+            Playground.image 176
+                368
+                -- (Env.baseUrl ++ "/assets/environment/forest.png")
+                (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_environment_forest_png)
     in
     [ image
         |> Playground.moveLeft 176
@@ -91,19 +104,31 @@ forest =
 
 
 logo =
-    Playground.image 194 38 (Env.baseUrl ++ "/assets/titles/title-screen.png")
+    Playground.image 194
+        38
+        -- (Env.baseUrl ++ "/assets/titles/title-screen.png")
+        (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_titles_title_screen_png)
 
 
 instructionsText =
-    Playground.image 284 168 (Env.baseUrl ++ "/assets/titles/instructions.png")
+    Playground.image 284
+        168
+        -- (Env.baseUrl ++ "/assets/titles/instructions.png")
+        (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_titles_instructions_png)
 
 
 pressEnterText =
-    Playground.image 76 12 (Env.baseUrl ++ "/assets/titles/press-enter-text.png")
+    Playground.image 76
+        12
+        -- (Env.baseUrl ++ "/assets/titles/press-enter-text.png")
+        (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_titles_press_enter_text_png)
 
 
 creditsText =
-    Playground.image 186 16 (Env.baseUrl ++ "/assets/titles/credits-text.png")
+    Playground.image 186
+        16
+        -- (Env.baseUrl ++ "/assets/titles/credits-text.png")
+        (buildUrlFromBase64 CompilationInterface.SourceFiles.file__base64____assets_titles_credits_text_png)
 
 
 
@@ -436,3 +461,8 @@ frame index ( head, rest ) =
             List.drop (index - 1) rest
                 |> List.head
                 |> Maybe.withDefault head
+
+
+buildUrlFromBase64 : String -> String
+buildUrlFromBase64 base64 =
+    "data:;base64," ++ base64
