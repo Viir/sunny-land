@@ -34,11 +34,11 @@ import Playground.Extra exposing (sprite)
 
 
 tileset =
-    Env.baseUrl ++ "/assets/environment/tileset.png"
+    Env.fullUrlFromRelativePath "/assets/environment/tileset.png"
 
 
 entities =
-    Env.baseUrl ++ "/assets/atlas/entities.png"
+    Env.fullUrlFromRelativePath "/assets/atlas/entities.png"
 
 
 type alias SpriteAnimation =
@@ -57,7 +57,7 @@ sky =
     -- Repeat left and right to make animation easier
     let
         image =
-            Playground.image 384 122 (Env.baseUrl ++ "/assets/environment/sky.png")
+            Playground.image 384 122 (Env.fullUrlFromRelativePath "/assets/environment/sky.png")
     in
     [ Playground.moveLeft 384 image
     , image
@@ -68,14 +68,14 @@ sky =
 
 
 sea =
-    Playground.image 384 138 (Env.baseUrl ++ "/assets/environment/sea.png")
+    Playground.image 384 138 (Env.fullUrlFromRelativePath "/assets/environment/sea.png")
         |> Playground.moveDown 180
 
 
 forest =
     let
         image =
-            Playground.image 176 368 (Env.baseUrl ++ "/assets/environment/forest.png")
+            Playground.image 176 368 (Env.fullUrlFromRelativePath "/assets/environment/forest.png")
     in
     [ image
         |> Playground.moveLeft 176
@@ -91,19 +91,19 @@ forest =
 
 
 logo =
-    Playground.image 194 38 (Env.baseUrl ++ "/assets/titles/title-screen.png")
+    Playground.image 194 38 (Env.fullUrlFromRelativePath "/assets/titles/title-screen.png")
 
 
 instructionsText =
-    Playground.image 284 168 (Env.baseUrl ++ "/assets/titles/instructions.png")
+    Playground.image 284 168 (Env.fullUrlFromRelativePath "/assets/titles/instructions.png")
 
 
 pressEnterText =
-    Playground.image 76 12 (Env.baseUrl ++ "/assets/titles/press-enter-text.png")
+    Playground.image 76 12 (Env.fullUrlFromRelativePath "/assets/titles/press-enter-text.png")
 
 
 creditsText =
-    Playground.image 186 16 (Env.baseUrl ++ "/assets/titles/credits-text.png")
+    Playground.image 186 16 (Env.fullUrlFromRelativePath "/assets/titles/credits-text.png")
 
 
 
