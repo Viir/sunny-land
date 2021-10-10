@@ -17,15 +17,9 @@ It aims to have a fairly complete feature set found in typical 80's platformers:
 - Game over screen (to-do)
 - Multiple levels (to-do)
 
-## Run locally
+## Hacking
 
-Clone the repo and on the command line run Elm's `reactor`:
-
-```
-elm reactor
-```
-
-Then point your browser to <http://localhost:8000/src/Main.elm>
+A quick way to adapt the program code and see your changes is the editor at https://elm-editor.com/?project-state=https%3A%2F%2Fgithub.com%2FViir%2Fsunny-land%2Ftree%2Fd7660f6e6edf099d8d52587224582f235e0f6a4e%2F&file-path-to-open=src%2FMain.elm
 
 ## How this thing works
 
@@ -110,4 +104,4 @@ Game art by Ansimuz <https://ansimuz.itch.io/sunny-land-pixel-game-art>
 [1]: https://package.elm-lang.org/packages/justgook/webgl-playground/latest/
 [2]: https://www.amazon.it/Game-Physics-Engine-Development-Commercial-Grade/dp/0123819768
 [3]: https://www.mapeditor.org
-[4]: https://lab.passiomatic.com/sunny-land/
+[4]: https://elm-editor.com/?project-state=https%3A%2F%2Fgithub.com%2FViir%2Fsunny-land%2Ftree%2Fd7660f6e6edf099d8d52587224582f235e0f6a4e%2F&file-path-to-open=src%2FMain.elm
